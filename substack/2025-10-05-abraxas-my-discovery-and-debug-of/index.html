@@ -1,0 +1,240 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#2C2D32">
+  
+  <title>Abraxas : my discovery and debug of it • discovery of CodeParity: the journey</title>
+  <meta name="author" content="Captain Codeparity">
+  <meta name="description" content="Long-form articles, Substack essays, and posts — archived and self-hosted.">
+  <link rel="alternate" type="application/atom+xml" title="discovery of CodeParity: the journey Atom Feed" href="https://blog.codeparity.com/atom.xml" />
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Abraxas : my discovery and debug of it">
+  <meta property="og:url" content="https://blog.codeparity.com/substack/2025-10-05-abraxas-my-discovery-and-debug-of/">
+  <meta property="og:site_name" content="discovery of CodeParity: the journey">
+  <link rel="canonical" href="https://blog.codeparity.com/substack/2025-10-05-abraxas-my-discovery-and-debug-of/">
+  <meta name="twitter:card" content="/fireball.gif">
+  <meta name="twitter:image" content="/fireball.gif">
+  <meta property="og:image" content="/fireball.gif">
+  <meta name="twitter:title" content="Abraxas : my discovery and debug of it">
+  <meta name="MobileOptimized" content="320">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=5e23bffe691055b88067cbc8d11b96ce2a8dc5e25e49367803766a3cadbcfc7f05a62079bfa558d5e234c6a7455d21fc2960b196bda5cbd591bd4c2dbe67920d">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=7267c6f502a03c1e4df9d8136dcc6cd9e67e0b9644941d22ed34e4fe747580f95a65f77a183bb967c1ec60eecd0c298b2670d89a67a647391fb7d1501bcf0982">
+  <link rel="stylesheet" type="text/css" href="/unstyle.css?v=e52261ec52111833e14883ac8670a7d39200fecc6c58e2f559de9e4e14199c45e42fd340ad5f1d9d587d7120b919a18a55ddae59daffb1b1b8fefe087d3a1694">
+  <link rel="stylesheet" type="text/css" href="/main.css?v=059f7383a6d3a894d91e7598ef57985d5d83439e32f615f436bb35376118e1b653eefd20866f505bd6e6e418a883d58eaa861c116d30efe6965d44c1ad5dcc2c">
+  
+  
+  <link rel="stylesheet" type="text/css" href="/langs.css?v=12474958ee314a9fde4704e1f5a032dc632d41f9461faca326ac284297766c4ceb07b45fec7fbc09fa72b0f21dcc64f0c31e64fc2e5e838b1d30f5fe540afd78">
+  <link id="giallo" rel="stylesheet" type="text/css" href="/giallo.css">
+  <style>#posts.inner-post-page .block-left{background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url("/bk-prk.png?v=b00246fb5faeab35a588f347224b00d53083a9d5f4ae8cd87c0c2e0432bf7f348c6a6ab6f4e4edaf5ddbf13ee34b24946dd0af4cd7db6f4f334599f38917ac9e") no-repeat center center;background-size:cover}</style>
+  <style>#posts .block-left{background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url("/bk-prk.png?v=b00246fb5faeab35a588f347224b00d53083a9d5f4ae8cd87c0c2e0432bf7f348c6a6ab6f4e4edaf5ddbf13ee34b24946dd0af4cd7db6f4f334599f38917ac9e") no-repeat;background-size:cover,cover}.block-left{background:linear-gradient(rgba(44,45,51,0.9),rgba(44,45,51,0.9)),url("/c1tyh4ll.png?v=e6bb8cdead47e48c0deba1e0a3016070984b5f7271166a72638f9ec5a6ef2d2eb8012e8e4cb64f4f3b6574c6d708bf2ae660d04b8b59a6de675ce4d4d62dd4c3") no-repeat;background-size:cover}</style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GG5KMRL7L5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GG5KMRL7L5');
+</script>
+
+  </head>
+  <body id="posts" class="inner-post-page"><link rel="stylesheet" type="text/css" href="/embeds.css?v=13a59e71e5ff42b351db550598f00c96e11040827def94b65ba78c0ee849567b15a38611519800852e9795c4451e5a6338454c77de9e87032c2ed7ba47ee3638">
+    <div class="block-left">
+      <div class="content">
+        <a href="/" class="logo"><img src="/fireball.gif?v=569e393374f2af74d6c575090904aaf51e641e5eb5ea89ae7c7de01f7293abc165b3a7e8685690a8b951c778603fec98ae6822ff2f7ea86a536776966cb65d5d" alt="logo" width="64" height="64"></a>
+  
+      <div class="post-title-section">
+        <h1 class="section-title">Abraxas : my discovery and debug of it</h1>
+        
+      </div>
+  
+      </div>
+    </div>
+    <div class="block-right">
+      
+      <div id="nav-container">
+      <nav class="nav-bar" role="navigation">
+        <ul class="nav-menu">
+          <li><a href="/">Home</a></li>
+          
+          
+          <li><a href="/articles/">Articles</a></li>
+          
+          <li class="nav-active"><a href="/substack/">Substack</a></li>
+          
+          <li><a href="/posts/">Posts</a></li>
+          
+        </ul>
+      </nav>
+      
+      <script defer src="/elasticlunr.min.js?v=b9be63b71422cbfde9f14310b397d9a7092f2946bffec11811a831398ace978c1c592e9a578f1fa32041e6c0dde68657fe58d3c30b0eaa758c63c5fd45117336"></script>
+      <script defer src="/search.js", integrity="sha512-TFqLtJm3+gFT0C3TGNIfh/IveNYRX8ajBVithuW34Rtv9Y6rKH6tZ/tVMAb9F7RBvHBm7uy0ktdKaMEKISEzvQ=="></script>
+      <nav class="search-container" id="search-nav">
+        <input id="search" type="search" placeholder="Search" aria-label="Search">
+        <div class="search-results">
+          <div class="search-results__items"></div>
+        </div>
+      </nav>
+      
+      </div>
+      
+  
+    <div class="inner-post content">
+      <div class="date-highlight">05 Oct 2025</div>
+      
+      
+      <div class="post-info"><div class="post-ext-info">
+        
+        <p>3 minutes reading time</p>
+        
+        
+      </div>
+      
+      
+      
+      </div>
+      
+      
+      <div class="toc-block">
+        <ul>
+          
+          <li>
+            <a class="toc-anchor toc" href="https://blog.codeparity.com/substack/2025-10-05-abraxas-my-discovery-and-debug-of/#Abraxas_:_diff_forms_of_it">Abraxas : diff forms of it</a>
+          </li>
+          
+          <li>
+            <a class="toc-anchor toc" href="https://blog.codeparity.com/substack/2025-10-05-abraxas-my-discovery-and-debug-of/#debug">debug</a>
+          </li>
+          
+        </ul>
+      </div>
+      
+      <p><em>A symbol : mystery behind it : god/demon or man made?</em></p>
+<p>I was introduced to abraxas : by a person i call - prophet.</p>
+<p>i dont know him : he surely doesnt …and we dont care about it.</p>
+<p>it is a sort of synchronocity : which weird of mind find : each other.</p>
+<p>not coincidences.</p>
+<p>That was few years ago : my 0 time : it had no ‘meaning’.</p>
+<span class="embed-video"><iframe src="https://www.youtube-nocookie.com/embed/81T-FQhHUVs?rel=0" title="YouTube video 81T-FQhHUVs" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></span>
+<p>My perception of symbols..</p>
+<p>is based on the idea of dem : dey should be ‘simple’.</p>
+<p>symbology or components of it : as i learned from prophet : seemed like keys..</p>
+<p>which required my simpler : much deviled mind : for i have gone a few rounds with it : in different forms : when i dint know it.</p>
+<p>I dint make much of it…sure there is some symbol..and there is something ‘symbolical’ about it.</p>
+<p>my world was burning : and i had no clue : how it all started.</p>
+<p>i needed a purpose. a meaning of why of ‘me’.</p>
+<p>i had clues … of ‘hate’ of me..</p>
+<p>but not ‘why’ of it all.</p>
+<p>it seemed : purpose-less.</p>
+<p>for few years, i saw the world burning down..in different forms.</p>
+<p>i did not care for it : for i did believe : i am not supposed to care for it.</p>
+<p>just he ways of ‘progress’ : pay taxes : and system should ‘work’.</p>
+<p>the ‘why’ : became much complex : and much simpler later on.</p>
+<p>It was just money ..</p>
+<p>of oil and progress..</p>
+<p>and how it changed people around u : their standards : their progress…</p>
+<p>their dna : bios : limits : all limited by 1 simple post : a happy facebook indian family post</p>
+<p>that post : is all dey care about : it is their hole world</p>
+<p>the other side : is linkedin and ‘news’ of different kinds.</p>
+<p>i had the root of the snake : the shape of it..</p>
+<p>the abstract form of it…</p>
+<p>and the algos of it.</p>
+<h2 id="Abraxas_:_diff_forms_of_it">Abraxas : diff forms of it</h2>
+<p><a rel="noopener external" target="_blank" href="https://en.wikipedia.org/wiki/Abraxas"><img src="https://substack-post-media.s3.amazonaws.com/public/images/967ab688-5b62-4be1-bed2-572ca8ff397d_250x328.png" alt="" /></a></p>
+<p>or : another</p>
+<p><a rel="noopener external" target="_blank" href="https://substackcdn.com/image/fetch/$s_!XMqd!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0559d9a0-4f26-4ecc-a157-2a0dc53282a3_500x893.png"><img src="https://substack-post-media.s3.amazonaws.com/public/images/0559d9a0-4f26-4ecc-a157-2a0dc53282a3_500x893.png" alt="" /></a></p>
+<ul>
+<li>whip : discipline : forced</li>
+<li>kids : not happy : despair</li>
+<li>snakes : diff directions</li>
+<li>horizontal : earth / feminine</li>
+<li>dog : looking helpless</li>
+</ul>
+<h2 id="debug">debug</h2>
+<p>I dont think ‘abraxas’ : the demi - god ..exists...
+it is a symbol : for a plan for humanity..
+dreamed by a klan : imagined as symbol..</p>
+<p>if i decided i am the supreme being of brit reptile monkey hopping rx gene superior pure dna being : my strat would be...</p>
+<p>to make a ‘war’..
+which consumes the world’s culture ..
+into some ‘historical trauma’ : of gods..</p>
+<p>i will invent 2 snakes..
+1 hornie
+1 hungry</p>
+<p>they would have to fight..</p>
+<p>pakistan is hornie snake
+cn is hungry snake</p>
+<p>they are a ‘kind’ of ‘war’...
+the broad ‘ideological’ war..</p>
+<p>coz ‘Christianity’ as a snake : was ded..
+it needed new face : Capitalism
+its baby : CN</p>
+<p>the hornie snake is older / ancient..
+pakistan is a prime baby of that snake...</p>
+<p>they all come from jeruhole...</p>
+<p>we are just beginning to see the 2 snakes : and their invisible yet visible ‘taquiyya virus’.</p>
+<p>originally : <a rel="noopener external" target="_blank" href="https://www.linkedin.com/feed/update/urn:li:activity:7308508416623157248/">published here</a></p>
+<p>concluded by the last definitive ‘hint by prophet : ‘value- money/woomen’</p>
+<span class="embed-video"><iframe src="https://www.youtube-nocookie.com/embed/4Wsmnn0rm-A?rel=0" title="YouTube video 4Wsmnn0rm-A" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></span>
+<p>Thank u : this is all delusional for most..</p>
+<p>but likey most of times..</p>
+<p>i may say : this 0 journey : chose u : and it did change your ‘stack’ and destiny..</p>
+<p>for you did invest ‘time’ in all this.</p>
+<p>you are part of it : not coincidence of it.</p>
+
+      
+      
+      <p class="post-source">Source: <a href="https://codeparity.substack.com/p/abraxas-my-discovery-and-debug-of" rel="noopener" target="_blank">https:&#x2F;&#x2F;codeparity.substack.com&#x2F;p&#x2F;abraxas-my-discovery-and-debug-of</a></p>
+      
+      <br>
+      
+        <nav class="pagination">
+        
+          <a class="pagination_pager" href="https://blog.codeparity.com/substack/2025-10-05-lesson-we-are-incompetent/">prev</a>
+        
+        
+          <a class="pagination_pager" href="https://blog.codeparity.com/substack/2025-10-06-earning-2nd-chance/">next</a>
+        
+        </nav>
+      
+      
+    </div>
+  
+  
+    
+    <section class="footer-content">
+      
+      <footer id="footer-block">
+        
+        <nav class="nav-footer" role="navigation">
+          <ul class="footer-links" aria-label="footer links">
+            <li><a href="/">index</a></li><li><a href="/sitemap.xml">sitemap</a></li><li><a href="/articles/">articles</a></li><li><a href="/substack/">substack</a></li><li><a href="/posts/">posts</a></li><li><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">cc by-nc-sa 4.0</a></li>
+          </ul>
+        </nav>
+        <p><b>©</b> 2026 Captain Codeparity</p>
+        
+        <p>Powered by <a href="https://www.getzola.org" target="_blank">Zola</a> & <a href="https://halve-z.netlify.app" target="_blank">Halve-Z</a></p>
+        
+      </footer>
+    </section>
+    
+  
+    </div>
+    
+  </body>
+</html>
