@@ -34,11 +34,20 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=5e23bffe691055b88067cbc8d11b96ce2a8dc5e25e49367803766a3cadbcfc7f05a62079bfa558d5e234c6a7455d21fc2960b196bda5cbd591bd4c2dbe67920d">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=7267c6f502a03c1e4df9d8136dcc6cd9e67e0b9644941d22ed34e4fe747580f95a65f77a183bb967c1ec60eecd0c298b2670d89a67a647391fb7d1501bcf0982">
   <link rel="stylesheet" type="text/css" href="/unstyle.css?v=e52261ec52111833e14883ac8670a7d39200fecc6c58e2f559de9e4e14199c45e42fd340ad5f1d9d587d7120b919a18a55ddae59daffb1b1b8fefe087d3a1694">
-  <link rel="stylesheet" type="text/css" href="/main.css?v=059f7383a6d3a894d91e7598ef57985d5d83439e32f615f436bb35376118e1b653eefd20866f505bd6e6e418a883d58eaa861c116d30efe6965d44c1ad5dcc2c">
+  <link id="theme-dark" rel="stylesheet" type="text/css" href="/dark.css?v=9d96c22893c6f5fc196425b0f0dcedc0548512994539ecd14757c94592682db6941e9fe3682c17fc6201d5b5cfe8885029a00f4e46c16095bfc086babe81ed2e">
+  <link id="theme-light" rel="stylesheet" type="text/css" href="/light.css?v=233ae9e0e92c6a7c412f1c197780365b3408a1f0a1a26cd7786ee55761cd4bb7d6d27162dd9fa035045c0070d0a3b88a45a1138872271191258596e3fd553c1b" disabled="true">
+  <script>
+    (function() {
+      var theme = localStorage.getItem('theme') || 'dark';
+      if (theme === 'light') {
+        document.getElementById('theme-dark').disabled = true;
+        document.getElementById('theme-light').disabled = false;
+      }
+    })();
+  </script>
   
   
   <link rel="stylesheet" type="text/css" href="/langs.css?v=12474958ee314a9fde4704e1f5a032dc632d41f9461faca326ac284297766c4ceb07b45fec7fbc09fa72b0f21dcc64f0c31e64fc2e5e838b1d30f5fe540afd78">
-  <link id="giallo" rel="stylesheet" type="text/css" href="/giallo.css">
   <style>#posts.inner-post-page .block-left{background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url("/bk-prk.png?v=b00246fb5faeab35a588f347224b00d53083a9d5f4ae8cd87c0c2e0432bf7f348c6a6ab6f4e4edaf5ddbf13ee34b24946dd0af4cd7db6f4f334599f38917ac9e") no-repeat center center;background-size:cover}</style>
   <style>#posts .block-left{background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url("/bk-prk.png?v=b00246fb5faeab35a588f347224b00d53083a9d5f4ae8cd87c0c2e0432bf7f348c6a6ab6f4e4edaf5ddbf13ee34b24946dd0af4cd7db6f4f334599f38917ac9e") no-repeat;background-size:cover,cover}.block-left{background:linear-gradient(rgba(44,45,51,0.9),rgba(44,45,51,0.9)),url("/c1tyh4ll.png?v=e6bb8cdead47e48c0deba1e0a3016070984b5f7271166a72638f9ec5a6ef2d2eb8012e8e4cb64f4f3b6574c6d708bf2ae660d04b8b59a6de675ce4d4d62dd4c3") no-repeat;background-size:cover}</style>
 
@@ -55,29 +64,33 @@
 
 
   </head>
-  <body id="posts" class="inner-post-page"><link rel="stylesheet" type="text/css" href="/embeds.css?v=13a59e71e5ff42b351db550598f00c96e11040827def94b65ba78c0ee849567b15a38611519800852e9795c4451e5a6338454c77de9e87032c2ed7ba47ee3638">
+  <body id="posts" class="inner-post-page">
     <div class="block-left">
       <div class="content">
         <a href="/" class="logo"><img src="/fireball.gif?v=569e393374f2af74d6c575090904aaf51e641e5eb5ea89ae7c7de01f7293abc165b3a7e8685690a8b951c778603fec98ae6822ff2f7ea86a536776966cb65d5d" alt="logo" width="64" height="64"></a>
   
-      <div class="post-title-section" style="padding-right: 20px;">
-        <h1 class="section-title">i am no chankya homey...</h1>
-        
-        
-
-        
-        <div class="post-meta" style="margin-top: 1.5rem; margin-bottom: 1.5rem; font-size: 0.9rem; opacity: 0.75; line-height: 1.6;">
+      <div class="left-overlay-box">
+        <div class="post-title-section" style="display: flex; justify-content: space-between; align-items: flex-start; width: 100%; flex-wrap: wrap; position: static;">
+          <div style="text-align: left; flex: 1; min-width: 250px;">
+            <h1 class="section-title">i am no chankya homey...</h1>
+            
+          </div>
           
-          <p style="margin: 0;">📅 July 09, 2026</p>
-          
-          
-          <p style="margin: 0;">⏳ 1 min read</p>
-          
-          
+          <div style="text-align: right; flex: 1; min-width: 200px; padding-left: 20px;">
+            <div class="date-highlight" style="margin: 0 0 10px; justify-content: flex-end; text-align: right;">
+              <time datetime="2026-07-09">📅 09 Jul 2026</time>
+            </div>
+            
+            
+            <div class="post-info" style="margin-top: 0; justify-content: flex-end;"><div class="post-ext-info" style="border: none; padding: 0; margin-bottom: 0; text-align: right; display: block;">
+              
+              <p style="margin-bottom: 5px;">⏳ 1 minute reading time</p>
+              
+              
+            </div></div>
+            
+          </div>
         </div>
-        
-
-        
       </div>
   
       </div>
@@ -96,8 +109,24 @@
           
           <li class="nav-active"><a href="/posts/">Posts</a></li>
           
+          <li><a href="#" id="theme-toggle" onclick="toggleTheme(event)">🌗 Theme</a></li>
         </ul>
       </nav>
+      <script>
+        function toggleTheme(e) {
+          if (e) e.preventDefault();
+          var currentTheme = localStorage.getItem('theme') || 'dark';
+          var newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+          localStorage.setItem('theme', newTheme);
+          if (newTheme === 'light') {
+            document.getElementById('theme-dark').disabled = true;
+            document.getElementById('theme-light').disabled = false;
+          } else {
+            document.getElementById('theme-dark').disabled = false;
+            document.getElementById('theme-light').disabled = true;
+          }
+        }
+      </script>
       
       <script defer src="/elasticlunr.min.js?v=b9be63b71422cbfde9f14310b397d9a7092f2946bffec11811a831398ace978c1c592e9a578f1fa32041e6c0dde68657fe58d3c30b0eaa758c63c5fd45117336"></script>
       <script defer src="/search.js", integrity="sha512-TFqLtJm3+gFT0C3TGNIfh/IveNYRX8ajBVithuW34Rtv9Y6rKH6tZ/tVMAb9F7RBvHBm7uy0ktdKaMEKISEzvQ=="></script>
@@ -115,7 +144,11 @@
       
       
       
+      <div class="post-info">
       
+      
+      
+      </div>
       
       <p>i am no chankya homey...<br />
 but aint 'datacenters' an 'investment' for dem..<br />
@@ -139,15 +172,14 @@ we toh no - chankya..</p>
 sure - incoming  🤣</p>
 
       
-      
       <br>
       
         <nav class="pagination">
         
-          <a class="pagination_pager" href="https://blog.codeparity.com/posts/2026-07-09-214342/">prev</a>
+          <a class="pagination_pager" href="/posts/2026-07-09-214342/">prev</a>
         
         
-          <a class="pagination_pager" href="https://blog.codeparity.com/posts/2026-07-09-224146/">next</a>
+          <a class="pagination_pager" href="/posts/2026-07-09-224146/">next</a>
         
         </nav>
       
