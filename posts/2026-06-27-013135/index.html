@@ -34,8 +34,8 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=5e23bffe691055b88067cbc8d11b96ce2a8dc5e25e49367803766a3cadbcfc7f05a62079bfa558d5e234c6a7455d21fc2960b196bda5cbd591bd4c2dbe67920d">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=7267c6f502a03c1e4df9d8136dcc6cd9e67e0b9644941d22ed34e4fe747580f95a65f77a183bb967c1ec60eecd0c298b2670d89a67a647391fb7d1501bcf0982">
   <link rel="stylesheet" type="text/css" href="/unstyle.css?v=e52261ec52111833e14883ac8670a7d39200fecc6c58e2f559de9e4e14199c45e42fd340ad5f1d9d587d7120b919a18a55ddae59daffb1b1b8fefe087d3a1694">
-  <link id="theme-dark" rel="stylesheet" type="text/css" href="/dark.css?v=00e105ff1106c5d2d64feaeb99923ba33852830939ecf3d5074e16cc937bad34b709f7ac3329d6550a34fbb27556e271635f5d5b36706a23622e1122a975c4b3">
-  <link id="theme-light" rel="stylesheet" type="text/css" href="/light.css?v=fd42c3a66b29c91c466f744e5d312649533ef76551904835d9f8f900b6577a27ca454c44b5de2130e324aee73bfd7da141886ce41fea17ca1ebcea2d0b3cd850" disabled="true">
+  <link id="theme-dark" rel="stylesheet" type="text/css" href="/dark.css?v=9acd9d8482fc23faba13ec2766d268acf5c1a9b5258c2cf0da580cfc864a314297d05130e670afbe2664fa535afb19b2efdbe79c413f6f8e13b64214b198d2d9">
+  <link id="theme-light" rel="stylesheet" type="text/css" href="/light.css?v=ee526e33fb41088fff128566a535a0c32d461c734cca3cfe8530a1eda6a887f39ec2d0898e1d0dc30571d0a234171745ef6bf7f111cecb46b1f9451fbe5bb4b0" disabled="true">
   <script>
     (function() {
       var theme = localStorage.getItem('theme') || 'dark';
@@ -48,7 +48,7 @@
   
   
   <link rel="stylesheet" type="text/css" href="/langs.css?v=12474958ee314a9fde4704e1f5a032dc632d41f9461faca326ac284297766c4ceb07b45fec7fbc09fa72b0f21dcc64f0c31e64fc2e5e838b1d30f5fe540afd78">
-  <link rel="stylesheet" type="text/css" href="/embeds.css?v=62fc25bd77ba7650e55b24c3193b53d889f282c989826ea3b6fbe22d24fa2c437d11134c80323028140f38d0e285f6fd6307a0a75aa37bddbfe06904fc1cd517">
+  <link rel="stylesheet" type="text/css" href="/embeds.css?v=3ed0fa49804f51ac9fb83ad778d1860676c4ae94c2e5144e4383e965a2365cb71936575639e7a4a57d1e5b290e46c4f5ab421384c1f65982b48cb548907df202">
   <style>#posts.inner-post-page .block-left{background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url("/bk-prk.png?v=b00246fb5faeab35a588f347224b00d53083a9d5f4ae8cd87c0c2e0432bf7f348c6a6ab6f4e4edaf5ddbf13ee34b24946dd0af4cd7db6f4f334599f38917ac9e") no-repeat center center;background-size:cover}</style>
   <style>#posts .block-left{background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url("/bk-prk.png?v=b00246fb5faeab35a588f347224b00d53083a9d5f4ae8cd87c0c2e0432bf7f348c6a6ab6f4e4edaf5ddbf13ee34b24946dd0af4cd7db6f4f334599f38917ac9e") no-repeat;background-size:cover,cover}.block-left{background:linear-gradient(rgba(44,45,51,0.9),rgba(44,45,51,0.9)),url("/c1tyh4ll.png?v=e6bb8cdead47e48c0deba1e0a3016070984b5f7271166a72638f9ec5a6ef2d2eb8012e8e4cb64f4f3b6574c6d708bf2ae660d04b8b59a6de675ce4d4d62dd4c3") no-repeat;background-size:cover}</style>
 
@@ -225,5 +225,18 @@ to become the smoldering coal : in summers..</p>
   
     </div>
     
+    <script>
+      // YouTube loop toggle — swap the iframe src between loop and non-loop.
+      document.addEventListener('click', function(e) {
+        var btn = e.target.closest('.yt-loop-toggle');
+        if (!btn) return;
+        var vid = btn.dataset.vid;
+        var base = btn.dataset.base;
+        var iframe = btn.parentElement.querySelector('iframe');
+        if (!iframe || !vid || !base) return;
+        var looping = btn.classList.toggle('yt-loop-on');
+        iframe.src = looping ? base + '&loop=1&playlist=' + vid : base;
+      });
+    </script>
   </body>
 </html>
